@@ -1,0 +1,38 @@
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+    url('../assets/fonts/latoregular.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../assets/fonts/latoregular.woff') format('woff'), /* Modern Browsers */
+    url('../assets/fonts/latoregular.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 500;
+    src: local(''),
+    url('../assets/fonts/latomedium.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../assets/fonts/latomedium.woff') format('woff'), /* Modern Browsers */
+    url('../assets/fonts/latomedium.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 600;
+    src: local(''),
+    url('../assets/fonts/latosemibold.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../assets/fonts/latosemibold.woff') format('woff'), /* Modern Browsers */
+    url('../assets/fonts/latosemibold.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    src: local(''),
+    url('../assets/fonts/latobold.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../assets/fonts/latobold.woff') format('woff'), /* Modern Browsers */
+    url('../assets/fonts/latobold.ttf') format('truetype'); /* Safari, Android, iOS */
+}
