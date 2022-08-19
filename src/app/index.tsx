@@ -1,10 +1,12 @@
 import {FC} from 'react';
 import {Route, Routes} from "react-router-dom";
 
-import {Layout} from "@layout";
 import {Home, Movie} from "@pages";
 
+import {Layout} from "./layout";
+
 import '@app/styles/index.css';
+
 
 type AppProps = {}
 

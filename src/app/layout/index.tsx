@@ -1,6 +1,7 @@
 import {FC} from 'react';
 
-import {Left, Main, Right} from "@layout";
+import {Left, Main, Right} from "@containers";
+
 
 
 export const Layout: FC = () => (
