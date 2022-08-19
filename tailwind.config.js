@@ -9,6 +9,7 @@ module.exports = {
       'bg2': '#21242d',
       'primary': '#f9f9f9',
       'secondary': '#00b9ae',
+      'border': 'rgba(249, 249, 249, 0.1)'
     },
     fontFamily: {
       sans: ['Lato', 'sans-serif'],

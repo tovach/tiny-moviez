@@ -6,8 +6,10 @@ import {Header} from "@layout";
 type MainProps = {}
 
 export const Main: FC<MainProps> = () => (
-    <div>
-        <Header/>
+    <div className='h-[2000px] px-10 border-x-border border-x-2'>
+        <div className='sticky top-0'>
+            <Header/>
+        </div>
         <Outlet/>
     </div>
 );
