@@ -1,9 +1,5 @@
-import {FC} from 'react';
+import { FC } from 'react';
 
-type CategoriesProps = {}
+type CategoriesProps = {};
 
-export const Categories: FC<CategoriesProps> = () => (
-    <div>
-        Categories
-    </div>
-);
+export const Categories: FC<CategoriesProps> = () => <div>Categories</div>;

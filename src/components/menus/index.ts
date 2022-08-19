@@ -1,3 +1,3 @@
-import {Navigation} from "./vertical/Navigation";
+import { Navigation } from './vertical/Navigation';
 
-export {Navigation}
+export { Navigation };

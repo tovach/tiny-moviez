@@ -1,9 +1,5 @@
-import {FC} from 'react';
+import { FC } from 'react';
 
-type MovieProps = {}
+type MovieProps = {};
 
-export const Movie: FC<MovieProps> = () => (
-    <div>
-        Movie
-    </div>
-);
+export const Movie: FC<MovieProps> = () => <div>Movie</div>;

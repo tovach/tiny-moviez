@@ -1,9 +1,5 @@
-import {FC} from 'react';
+import { FC } from 'react';
 
-type HeaderProps = {}
+type HeaderProps = {};
 
-export const Header: FC<HeaderProps> = () => (
-    <div>
-        Header
-    </div>
-);
+export const Header: FC<HeaderProps> = () => <div>Header</div>;

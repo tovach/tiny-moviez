@@ -1,9 +1,5 @@
-import {FC} from 'react';
+import { FC } from 'react';
 
-type HomeProps = {}
+type HomeProps = {};
 
-export const Home: FC<HomeProps> = () => (
-    <div>
-        Home
-    </div>
-);
+export const Home: FC<HomeProps> = () => <div>Home</div>;
