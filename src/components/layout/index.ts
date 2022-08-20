@@ -1,3 +1,4 @@
-import { Container } from './navigation/container/Container';
+import { HeaderWrapper } from '@components/layout/header/headerWrapper/headerWrapper';
+import { NavigationWrapper } from '@components/layout/navigation/navigationWrapper/navigationWrapper';
 
-export { Container };
+export { HeaderWrapper, NavigationWrapper };

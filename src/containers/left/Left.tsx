@@ -1,12 +1,12 @@
-import React, { FC, useMemo } from 'react';
+import React, { FC, ReactElement, useMemo } from 'react';
 
 import { Logo } from '@components/common';
-import { Container } from '@components/layout';
+import { NavigationWrapper } from '@components/layout';
 import { Navigation } from '@components/menus';
 
 type LeftProps = {};
 
-export const Left: FC<LeftProps> = (): JSX.Element => {
+export const Left: FC<LeftProps> = (): ReactElement => {
   const navLinks = {
     menu: useMemo(
       () => [
@@ -96,13 +96,12 @@ export const Left: FC<LeftProps> = (): JSX.Element => {
       []
     )
   };
-
   return (
-    <Container>
+    <NavigationWrapper>
       <Logo />
       <Navigation heading='Menu' items={navLinks.menu} />
       <Navigation heading='Library' items={navLinks.library} />
       <Navigation heading='General' items={navLinks.general} />
-    </Container>
+    </NavigationWrapper>
   );
 };

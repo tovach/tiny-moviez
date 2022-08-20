@@ -18,8 +18,9 @@
     "build": "craco build",
     "lint": "eslint src/**/*.{tsx,ts}",
     "lint:fix": "eslint --fix src/**/*.{tsx,ts}",
-    "prettier:check": "prettier --check src/**/*.{tsx,ts}",
-    "prettier:fix": "prettier --write src/**/*.{tsx,ts}"
+    "prettier": "prettier --check src/**/*.{tsx,ts}",
+    "prettier:fix": "prettier --write src/**/*.{tsx,ts}",
+    "typescript": "tsc"
   },
   "eslintConfig": {
     "extends": [
