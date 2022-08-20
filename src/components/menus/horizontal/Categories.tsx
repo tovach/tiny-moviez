@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { NavigationLink } from '@types';
 
 type CategoriesProps = {
-  items: Pick<NavigationLink, 'path' | 'id' | 'title'>[];
+  items: Omit<NavigationLink, 'icon'>[];
 };
 
 export const Categories: FC<CategoriesProps> = ({ items }) => (
