@@ -6,5 +6,7 @@ type IconButtonProps = {
 };
 
 export const IconButton: FC<IconButtonProps> = ({ children, type }) => (
-  <button type={type} className='material-icons'>{children}</button>
+  <button type={type} className='material-icons'>
+    {children}
+  </button>
 );

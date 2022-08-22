@@ -1,8 +1,8 @@
 import React, { FC, ReactElement, useMemo } from 'react';
 
 import { Logo } from '@components/common';
-import { NavigationWrapper } from '@components/layout';
 import { Navigation } from '@components/menus';
+import { NavigationWrapper } from '@components/wrappers';
 
 type LeftProps = {};
 

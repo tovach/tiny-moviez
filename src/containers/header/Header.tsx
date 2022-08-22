@@ -1,8 +1,8 @@
 import { FC, ReactElement, useMemo } from 'react';
 
-import { HeaderWrapper } from '@components/layout';
 import { Categories } from '@components/menus/horizontal/Categories';
 import { IconButton, SearchForm, TextInput } from '@components/ui';
+import { HeaderWrapper } from '@components/wrappers';
 
 type HeaderProps = {};
 

@@ -5,5 +5,7 @@ type WrapperProps = {
 };
 
 export const HeaderWrapper: FC<WrapperProps> = ({ children }) => (
-  <header className='flex justify-between p-10 items-center backdrop-blur'>{children}</header>
+  <header className='flex items-center justify-between bg-bg1 bg-opacity-80 p-10 backdrop-blur'>
+    {children}
+  </header>
 );
