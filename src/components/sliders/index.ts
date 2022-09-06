@@ -1,3 +1,5 @@
-import { MainSlider } from '@components/sliders/mainSlider/MainSlider';
+import { PrimarySlider } from '@components/sliders/primarySlider/PrimarySlider';
+import {SecondarySlider} from "@components/sliders/secondarySlider/SecondarySlider";
 
-export { MainSlider };
+
+export { PrimarySlider,SecondarySlider };

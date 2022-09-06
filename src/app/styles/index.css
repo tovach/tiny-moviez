@@ -5,6 +5,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .material-icons {
     font-family: 'Material Icons', sans-serif;
     font-weight: normal;

@@ -1,6 +1,6 @@
 import {FC, useMemo} from 'react';
 
-import {MainSlider} from '@components/sliders';
+import {PrimarySlider} from '@components/sliders';
 import {FilmsList} from "@components/films";
 
 type HomeProps = {};
@@ -115,7 +115,7 @@ export const Home: FC<HomeProps> = () => {
     };
     return (
         <div className='relative fade'>
-            <MainSlider items={images.slider}/>
+            <PrimarySlider items={images.slider}/>
             <h3 className='text-3xl font-extrabold pt-5 pb-4'>Popular on TinyMoviez</h3>
             <FilmsList items={images.films}/>
         </div>

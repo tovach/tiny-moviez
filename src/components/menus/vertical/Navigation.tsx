@@ -14,7 +14,7 @@ export const Navigation: FC<NavigationProps> = ({ heading, items }) => (
     <ul className='flex flex-col gap-4'>
       {items.map((el) => (
         <li key={el.id} className='hover:border-r-2 hover:border-secondary hover:text-secondary'>
-          <Link to={el.path} className='flex items-center gap-4 text-xl font-bold'>
+          <Link to={el.path} className='flex items-center gap-4 text-xl font-bold transition-all'>
             <span className='material-icons'>{el.icon}</span>
             {el.title}
           </Link>

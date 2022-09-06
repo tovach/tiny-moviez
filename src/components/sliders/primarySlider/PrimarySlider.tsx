@@ -7,7 +7,7 @@ type SliderProps = {
   items: Omit<FilmPoster, 'vote_average' | 'poster_path'>[];
 };
 
-export const MainSlider: FC<SliderProps> = ({ items }) => {
+export const PrimarySlider: FC<SliderProps> = ({ items }) => {
   const [active, setActive] = useState(0);
   const [intervalId, setIntervalId] = useState<NodeJS.Timeout>();
   const imagesCount = items.length;
