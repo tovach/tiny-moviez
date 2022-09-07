@@ -1,6 +1,7 @@
 import { FC, useMemo } from 'react';
-import { UserBar } from '@components/user';
+
 import { SecondarySlider } from '@components/sliders';
+import { UserBar } from '@components/user';
 
 type RightProps = {};
 
@@ -49,7 +50,7 @@ export const Right: FC<RightProps> = () => {
     )
   };
   return (
-    <div className='pl-10 pt-10 flex flex-col gap-10'>
+    <div className='flex flex-col gap-10 pl-10 pt-10'>
       <UserBar />
       <SecondarySlider heading='Top Rated' items={images.slider} />
       <SecondarySlider heading='Newest' items={images.slider} />

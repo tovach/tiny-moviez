@@ -1,6 +1,7 @@
 import React, { FC, HTMLAttributes, useRef } from 'react';
-import { FilmPoster } from '@types';
+
 import { IconButton, PrimaryButton, SecondaryButton } from '@components/ui';
+import { FilmPoster } from '@types';
 
 type SecondarySliderProps = {
   heading: string;

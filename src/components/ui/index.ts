@@ -4,4 +4,4 @@ import { SecondaryButton } from '@components/ui/buttons/secondaryButton/Secondar
 import { SearchForm } from '@components/ui/forms/SearchForm';
 import { TextInput } from '@components/ui/inputs/TextInput';
 
-export { IconButton, PrimaryButton, SearchForm, SecondaryButton,TextInput };
+export { IconButton, PrimaryButton, SearchForm, SecondaryButton, TextInput };

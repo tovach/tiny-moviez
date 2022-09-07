@@ -1,4 +1,4 @@
-import {FC, HTMLAttributes, ReactNode} from 'react';
+import { FC, HTMLAttributes, ReactNode } from 'react';
 
 type IconButtonProps = HTMLAttributes<HTMLButtonElement> & {
   children: ReactNode;

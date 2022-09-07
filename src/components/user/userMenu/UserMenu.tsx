@@ -1,9 +1,5 @@
-import {FC} from 'react';
+import { FC } from 'react';
 
-type UserMenuProps = {}
+type UserMenuProps = {};
 
-export const UserMenu: FC<UserMenuProps> = () => (
-    <div>
-        UserMenu
-    </div>
-);
+export const UserMenu: FC<UserMenuProps> = () => <div>UserMenu</div>;

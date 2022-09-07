@@ -1,17 +1,16 @@
 import { FC } from 'react';
-import { FilmPoster } from '@types';
-import { FilmCard } from '@components/films';
+
+import { Film } from '@types';
 
 type FilmsListProps = {
-  items: Omit<FilmPoster, 'backdrop_path'>[];
+  items: Film[];
+  renderItem: (item: Film) => React.ReactNode;
 };
 
-export const FilmsList: FC<FilmsListProps> = ({ items }) => (
-  <ul className='flex justify-between flex-wrap gap-10'>
+export const FilmsList: FC<FilmsListProps> = ({ items, renderItem }) => (
+  <ul className='flex flex-wrap justify-between gap-10'>
     {items.map((el) => (
-      <li key={el.id}>
-        <FilmCard item={el} />
-      </li>
+      <li key={el.id}>{renderItem(el)}</li>
     ))}
   </ul>
 );

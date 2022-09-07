@@ -1,11 +1,9 @@
-import {FC, ReactNode} from 'react';
+import { FC, ReactNode } from 'react';
 
 type UserBarWrapperProps = {
-    children:ReactNode;
-}
+  children: ReactNode;
+};
 
-export const UserBarWrapper: FC<UserBarWrapperProps> = ({children}) => (
-    <div className='flex justify-between items-center'>
-        {children}
-    </div>
+export const UserBarWrapper: FC<UserBarWrapperProps> = ({ children }) => (
+  <div className='flex items-center justify-between'>{children}</div>
 );

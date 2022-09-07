@@ -1,13 +1,14 @@
-import {FC} from 'react';
-import {UserBarWrapper} from "@components/wrappers";
-import {PrimaryButton} from "@components/ui";
-import {UserAvatar, UserMenu} from "@components/user";
+import { FC } from 'react';
 
-type UserBarProps = {}
+import { PrimaryButton } from '@components/ui';
+import { UserAvatar, UserMenu } from '@components/user';
+import { UserBarWrapper } from '@components/wrappers';
+
+type UserBarProps = {};
 
 export const UserBar: FC<UserBarProps> = () => (
-        <UserBarWrapper>
-            <PrimaryButton icon='notifications'/>
-            <UserMenu/>
-        </UserBarWrapper>
+  <UserBarWrapper>
+    <PrimaryButton icon='notifications' />
+    <UserMenu />
+  </UserBarWrapper>
 );

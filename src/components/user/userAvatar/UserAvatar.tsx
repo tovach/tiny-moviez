@@ -1,11 +1,11 @@
-import {FC} from 'react';
+import { FC } from 'react';
 
 type UserAvatarProps = {
-    image: string;
-}
+  image: string;
+};
 
-export const UserAvatar: FC<UserAvatarProps> = ({image}) => (
-    <div>
-        <img src={image} alt=""/>
-    </div>
+export const UserAvatar: FC<UserAvatarProps> = ({ image }) => (
+  <div>
+    <img src={image} alt='' />
+  </div>
 );

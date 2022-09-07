@@ -12,7 +12,7 @@ export const Categories: FC<CategoriesProps> = ({ items }) => (
     {items.map((el) => (
       <li key={el.id}>
         <Link
-          className='py-2 text-2xl border-b-2 border-[transparent] hover:border-b-2 hover:border-secondary hover:text-secondary transition-all'
+          className='border-b-2 border-[transparent] py-2 text-2xl transition-all hover:border-b-2 hover:border-secondary hover:text-secondary'
           to={el.path}
         >
           {el.title}
