@@ -1,5 +1,3 @@
-import { ENDPOINTS } from '@constants/api';
-
 export type NavigationLink = {
   id: number;
   icon: string;
@@ -37,7 +35,7 @@ type SpokenLanguage = {
   name: string;
 };
 
-export type Film = {
+export type Movie = {
   adult: boolean;
   backdrop_path: string;
   belongs_to_collection: BelongsToCollection;
@@ -65,8 +63,8 @@ export type Film = {
   vote_count: number;
 };
 
-export type FilmPoster = Pick<
-  Film,
+export type MoviePoster = Pick<
+  Movie,
   'id' | 'poster_path' | 'title' | 'vote_average' | 'backdrop_path'
 >;
 
@@ -182,11 +180,9 @@ export type ApiConfiguration = {
   change_keys: ChangeKeys;
 };
 
-export type PopularFilmsResponse = {
+export type GetMoviesResponse = {
   page: number;
-  results: Film[];
+  results: Movie[];
   total_pages: number;
   total_results: number;
 };
-
-export type QueryStrings = keyof typeof ENDPOINTS;

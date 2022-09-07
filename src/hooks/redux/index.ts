@@ -1,11 +1,11 @@
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 
 import { AppDispatch, AppRootState } from '@store';
-import { getPopularFilms } from '@store/filmSlice/filmSlice';
+import { getMovies } from '@store/movieSlice/movieSlice';
 import { bindActionCreators } from 'redux';
 
 const thunkActions = {
-  getPopularFilms
+    getMovies
 };
 
 export const useAppDispatch = () => useDispatch<AppDispatch>();

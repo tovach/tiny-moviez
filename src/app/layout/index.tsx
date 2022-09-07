@@ -12,7 +12,7 @@ export const Layout: FC = () => (
       </div>
       <Main />
       <div className='bg-bg2'>
-        <div className='sticky top-0'>
+        <div className='sticky top-0 overflow-hidden h-screen flex flex-col justify-center'>
           <Right />
         </div>
       </div>

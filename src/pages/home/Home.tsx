@@ -1,26 +1,33 @@
 import { FC, useEffect } from 'react';
 
-import { FilmCard, FilmsList } from '@components/films';
+import { MovieCard, MovieList } from '@components/movies';
 import { useAppSelector, useThunkActions } from '@hooks/redux';
-import { Film } from '@types';
-// import { PrimarySlider } from '@components/sliders';
+import { Movie } from '@types';
+import { PrimarySlider } from '@components/sliders';
 
 type HomeProps = {};
 
 export const Home: FC<HomeProps> = () => {
-  const { error, loading, popular } = useAppSelector((state) => state.filmSlice);
-  const { getPopularFilms } = useThunkActions();
-  const renderFilmItem = (item: Film) => <FilmCard item={item} imageSize='w300' />;
+  const {
+    response: { results: popular}
+  } = useAppSelector((state) => state.movieSlice.popular);
+  const {
+    response: { results: topRated }
+  } = useAppSelector((state) => state.movieSlice.topRated);
+
+  const { getMovies } = useThunkActions();
+  const renderMovieItem = (item: Movie) => <MovieCard item={item} imageSize='w300' />;
 
   useEffect(() => {
-    getPopularFilms();
+    getMovies('popular');
+    getMovies('topRated');
   }, []);
 
   return (
     <div className='fade relative'>
-      {/* <PrimarySlider items={images.slider} /> */}
+      <PrimarySlider items={topRated} imageSize='w1280' />
       <h3 className='pt-5 pb-4 text-3xl font-extrabold'>Popular on TinyMoviez</h3>
-      <FilmsList items={popular.results} renderItem={renderFilmItem} />
+      <MovieList items={popular} renderItem={renderMovieItem} />
     </div>
   );
 };

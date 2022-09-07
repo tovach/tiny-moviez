@@ -1,18 +1,18 @@
 import { FC } from 'react';
 
 import { PrimaryButton, SecondaryButton } from '@components/ui';
-import { Film, Images } from '@types';
+import { Movie, Images } from '@types';
 import {IMAGE_SECURE_BASE_URL} from "@constants/api";
 
-type FilmCardProps = {
-  item: Film;
+type MovieCardProps = {
+  item: Movie;
   imageSize: Images['poster_sizes'];
 };
 
-export const FilmCard: FC<FilmCardProps> = ({ item, imageSize }) => (
+export const MovieCard: FC<MovieCardProps> = ({ item, imageSize }) => (
   <article className='relative max-w-[250px] cursor-pointer rounded-xl shadow-lg transition-all hover:scale-105 hover:shadow-secondary'>
     <h3 className='absolute top-4 left-2 z-20 text-2xl font-extrabold'>{item.title}</h3>
-    <img className='rounded-xl brightness-50' src={`${IMAGE_SECURE_BASE_URL}/${imageSize}/${item.poster_path}`} alt={item.title} draggable='false' />
+    <img className='rounded-xl brightness-50' src={`${IMAGE_SECURE_BASE_URL}${imageSize}${item.poster_path}`} alt={item.title} draggable='false' />
     <span className='text-l absolute top-4 right-2 z-20 rounded  bg-bg2 px-3 font-extrabold'>
       {item.vote_average}
     </span>
