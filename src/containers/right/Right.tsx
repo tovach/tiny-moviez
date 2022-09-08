@@ -9,25 +9,30 @@ type RightProps = {};
 export const Right: FC<RightProps> = () => {
   const { getMovies } = useThunkActions();
   const {
-    nowPlaying: {
-      response: { results: nowPlaying }
-    }
-  } = useAppSelector((state) => state.movieSlice);
-
+    response: { results: popular }
+  } = useAppSelector((state) => state.movieSlice.popularTv);
   const {
-    upcoming: {
-      response: { results: upComing }
-    }
-  } = useAppSelector((state) => state.movieSlice);
+    response: { results: topRated }
+  } = useAppSelector((state) => state.movieSlice.topRatedTv);
+  const {
+    response: { results: nowPlaying }
+  } = useAppSelector((state) => state.movieSlice.nowPlayingFilm);
+  const {
+    response: { results: upcoming }
+  } = useAppSelector((state) => state.movieSlice.upcomingFilm);
 
   useEffect(() => {
-    getMovies('nowPlaying');
-    getMovies('upcoming');
+    getMovies('popularTv');
+    getMovies('topRatedTv');
+    getMovies('nowPlayingFilm');
+    getMovies('upcomingFilm');
   }, []);
   return (
-    <div className='flex flex-col gap-20 pl-10 pt-10'>
+    <div className='flex flex-col gap-10 pl-10 pt-10'>
+      <SecondarySlider heading='Featured TV' items={popular} imageSize='w185' />
+      <SecondarySlider heading='TopRated TV' items={topRated} imageSize='w185' />
       <SecondarySlider heading='Now Playing' items={nowPlaying} imageSize='w185' />
-      <SecondarySlider heading='UpComing' items={upComing} imageSize='w185' />
+      <SecondarySlider heading='Up Coming' items={upcoming} imageSize='w185' />
     </div>
   );
 };

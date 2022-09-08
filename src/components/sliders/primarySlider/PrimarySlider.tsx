@@ -1,8 +1,9 @@
-import { FC, useEffect, useState } from 'react';
+import React, { FC, SyntheticEvent, useState } from 'react';
 
 import { PrimaryButton, SecondaryButton } from '@components/ui';
 import { Images, Movie } from '@types';
 import { IMAGE_SECURE_BASE_URL } from '@constants/api';
+import placeholder from '@app/assets/images/placeholder_l.png';
 
 type SliderProps = {
   items: Movie[];
@@ -11,7 +12,6 @@ type SliderProps = {
 
 export const PrimarySlider: FC<SliderProps> = ({ items, imageSize }) => {
   const [active, setActive] = useState(0);
-  const [intervalId, setIntervalId] = useState<NodeJS.Timeout>();
   const imagesCount = items.length;
 
   const nextSlide = () => {
@@ -21,25 +21,11 @@ export const PrimarySlider: FC<SliderProps> = ({ items, imageSize }) => {
     setActive((prev) => (prev + imagesCount - 1) % imagesCount);
   };
 
-  const sliderInit = () => {
-    clearInterval(intervalId);
-    const id = setInterval(() => {
-      nextSlide();
-    }, 5000);
-    setIntervalId(id);
+  const onErrorImage = (e: SyntheticEvent<HTMLImageElement, Event>) => {
+    e.currentTarget.src = placeholder;
   };
-
-  const stopSlider = () => {
-    clearInterval(intervalId);
-  };
-
-  useEffect(() => {
-    sliderInit();
-    return () => clearInterval(intervalId);
-  }, []);
-
   return (
-    <div className='relative' onMouseEnter={stopSlider} onMouseLeave={sliderInit}>
+    <div className='relative'>
       <div className='relative flex justify-center'>
         {items.map((el, index) => (
           <div
@@ -48,6 +34,7 @@ export const PrimarySlider: FC<SliderProps> = ({ items, imageSize }) => {
           >
             <h3 className='absolute top-4 left-4 z-20 text-4xl font-extrabold '>{el.title}</h3>
             <img
+              onError={onErrorImage}
               className='z-10 rounded-2xl brightness-50'
               src={`${IMAGE_SECURE_BASE_URL}${imageSize}${el.backdrop_path}`}
               alt={el.title}

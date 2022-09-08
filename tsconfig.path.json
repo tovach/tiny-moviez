@@ -3,10 +3,11 @@
     "baseUrl": "./src",
     "paths": {
       "@app": ["./app"],
+      "@app/*": ["./app/*"],
       "@common": ["./common"],
       "@containers": ["./containers"],
       "@containers/*": ["./containers/*"],
-      "@conststants/*": ["./conststants/*"],
+      "@constants/": ["./constants/"],
       "@constants/*": ["./constants/*"],
       "@components": ["./components"],
       "@components/*": ["./components/*"],

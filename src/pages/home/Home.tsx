@@ -10,17 +10,17 @@ type HomeProps = {};
 export const Home: FC<HomeProps> = () => {
   const {
     response: { results: popular}
-  } = useAppSelector((state) => state.movieSlice.popular);
+  } = useAppSelector((state) => state.movieSlice.popularFilm);
   const {
     response: { results: topRated }
-  } = useAppSelector((state) => state.movieSlice.topRated);
+  } = useAppSelector((state) => state.movieSlice.topRatedFilm);
 
   const { getMovies } = useThunkActions();
   const renderMovieItem = (item: Movie) => <MovieCard item={item} imageSize='w300' />;
 
   useEffect(() => {
-    getMovies('popular');
-    getMovies('topRated');
+    getMovies('popularFilm');
+    getMovies('topRatedFilm');
   }, []);
 
   return (

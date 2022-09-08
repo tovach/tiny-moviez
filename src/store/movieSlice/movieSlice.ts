@@ -1,9 +1,9 @@
-import { MOVIE_ENDPOINTS } from '@constants/api';
+import { ENDPOINTS } from '@constants/api';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { AppRootState } from '@store';
 import { GetMoviesResponse } from '@types';
 
-type QueryStrings = keyof typeof MOVIE_ENDPOINTS;
+type QueryStrings = keyof typeof ENDPOINTS;
 
 type RequestStatus = {
   loading: boolean;
@@ -16,10 +16,12 @@ type Movies = {
 };
 
 type MovieSliceState = {
-  popular: Movies;
-  topRated: Movies;
-  upcoming: Movies;
-  nowPlaying: Movies;
+  popularFilm: Movies;
+  topRatedFilm: Movies;
+  upcomingFilm: Movies;
+  nowPlayingFilm: Movies;
+  popularTv: Movies;
+  topRatedTv: Movies;
 };
 
 const prepareStateSignature = (): Movies => ({
@@ -36,10 +38,12 @@ const prepareStateSignature = (): Movies => ({
 });
 
 const initialState: MovieSliceState = {
-  popular: prepareStateSignature(),
-  topRated: prepareStateSignature(),
-  nowPlaying: prepareStateSignature(),
-  upcoming: prepareStateSignature()
+  popularFilm: prepareStateSignature(),
+  topRatedFilm: prepareStateSignature(),
+  upcomingFilm: prepareStateSignature(),
+  nowPlayingFilm: prepareStateSignature(),
+  popularTv: prepareStateSignature(),
+  topRatedTv: prepareStateSignature()
 };
 
 export const getMovies = createAsyncThunk<
@@ -47,7 +51,7 @@ export const getMovies = createAsyncThunk<
   QueryStrings,
   { rejectValue: string; state: AppRootState }
 >('movieSlice/getMovies', async (arg, thunkApi) => {
-  const response = await fetch(MOVIE_ENDPOINTS[arg]);
+  const response = await fetch(ENDPOINTS[arg]);
   if (!response.ok) {
     return thunkApi.rejectWithValue(`Error, response code - ${response.status}`);
   }

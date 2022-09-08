@@ -1,8 +1,9 @@
-import React, { FC, HTMLAttributes, useRef } from 'react';
+import React, { FC, SyntheticEvent, useRef } from 'react';
 
 import { IconButton, PrimaryButton, SecondaryButton } from '@components/ui';
 import { Images, Movie } from '@types';
-import {IMAGE_SECURE_BASE_URL} from "@constants/api";
+import { IMAGE_SECURE_BASE_URL } from '@constants/api';
+import placeholder from '@app/assets/images/placeholder_s.png';
 
 type SecondarySliderProps = {
   heading: string;
@@ -17,6 +18,9 @@ export const SecondarySlider: FC<SecondarySliderProps> = ({ items, heading, imag
   };
   const scrollRight = () => {
     ref.current!.scrollLeft -= 230;
+  };
+  const onErrorImage = (e: SyntheticEvent<HTMLImageElement, Event>) => {
+    e.currentTarget.src = placeholder;
   };
 
   return (
@@ -39,11 +43,14 @@ export const SecondarySlider: FC<SecondarySliderProps> = ({ items, heading, imag
             key={el.id}
             className='relative h-[130px] min-w-[210px] cursor-pointer rounded-xl'
           >
-            <h3 className='absolute left-2 top-2 z-20 font-extrabold'>{el.title}</h3>
+            <h3 className='absolute left-2 top-2 z-20 font-extrabold'>
+              {el.title ? el.title : el.name}
+            </h3>
             <img
+              onError={onErrorImage}
               className='h-full w-full rounded-xl brightness-50'
               src={`${IMAGE_SECURE_BASE_URL}${imageSize}${el.backdrop_path}`}
-              alt={el.title}
+              alt={el.title ? el.title : el.name}
               draggable='false'
             />
             <div className='absolute bottom-2 z-20 flex w-full justify-between px-2'>
