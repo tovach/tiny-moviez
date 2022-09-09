@@ -9,6 +9,7 @@ type RightProps = {};
 
 export const Right: FC<RightProps> = () => {
   const { getMovies } = useThunkActions();
+
   const {
     response: { results: popular },
     requestStatus: { loading: popularLoading, error: popularError }
@@ -17,14 +18,6 @@ export const Right: FC<RightProps> = () => {
     response: { results: topRated },
     requestStatus: { loading: topRatedLoading, error: topRatdError }
   } = useAppSelector((state) => state.movieSlice.topRatedTv);
-  const {
-    response: { results: nowPlaying },
-    requestStatus: { loading: nowPlayingLoading, error: nowPlayingError }
-  } = useAppSelector((state) => state.movieSlice.nowPlayingFilm);
-  const {
-    response: { results: upcoming },
-    requestStatus: { loading: upcomingLoading, error: upcomingError }
-  } = useAppSelector((state) => state.movieSlice.upcomingFilm);
 
   useEffect(() => {
     getMovies('popularTv');
@@ -43,16 +36,6 @@ export const Right: FC<RightProps> = () => {
         <Skeleton height={130} width={210} variant='secondary' />
       ) : (
         <SecondarySlider heading='TopRated TV' items={topRated} imageSize='w185' />
-      )}
-      {nowPlayingLoading ? (
-        <Skeleton height={130} width={210} variant='secondary' />
-      ) : (
-        <SecondarySlider heading='Now Playing' items={nowPlaying} imageSize='w185' />
-      )}
-      {upcomingLoading ? (
-        <Skeleton height={130} width={210} variant='secondary' />
-      ) : (
-        <SecondarySlider heading='Up Coming' items={upcoming} imageSize='w185' />
       )}
     </div>
   );

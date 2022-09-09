@@ -4,16 +4,16 @@ import { useParams } from 'react-router';
 import { MovieItem } from '@components/movies';
 import { useAppSelector, useThunkActions } from '@hooks/redux';
 
-type MovieProps = {};
+type TvSeriesProps = {};
 
-export const Movie: FC<MovieProps> = () => {
+export const TvSeries: FC<TvSeriesProps> = () => {
   const { id } = useParams();
   const { getMovieById } = useThunkActions();
   const { item, error, loading } = useAppSelector((state) => state.movieItemSlice);
 
   useEffect(() => {
     if (id) {
-      getMovieById({ type: 'movie', id: Number(id) });
+      getMovieById({ type: 'tv', id: Number(id) });
     }
   }, [id]);
 

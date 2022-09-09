@@ -64,17 +64,18 @@ const movieSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(getMovies.pending, (state, action) => {
-      state[action.meta.arg].requestStatus.loading = true;
-    });
-    builder.addCase(getMovies.fulfilled, (state, action) => {
-      state[action.meta.arg].requestStatus.loading = false;
-      state[action.meta.arg].response = action.payload;
-    });
-    builder.addCase(getMovies.rejected, (state, action) => {
-      state[action.meta.arg].requestStatus.loading = false;
-      state[action.meta.arg].requestStatus.error = action.payload;
-    });
+    builder
+      .addCase(getMovies.pending, (state, action) => {
+        state[action.meta.arg].requestStatus.loading = true;
+      })
+      .addCase(getMovies.fulfilled, (state, action) => {
+        state[action.meta.arg].requestStatus.loading = false;
+        state[action.meta.arg].response = action.payload;
+      })
+      .addCase(getMovies.rejected, (state, action) => {
+        state[action.meta.arg].requestStatus.loading = false;
+        state[action.meta.arg].requestStatus.error = action.payload;
+      });
   }
 });
 export default movieSlice.reducer;

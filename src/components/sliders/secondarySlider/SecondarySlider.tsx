@@ -4,6 +4,7 @@ import { IconButton, PrimaryButton, SecondaryButton } from '@components/ui';
 import { Images, Movie } from '@types';
 import { IMAGE_SECURE_BASE_URL } from '@constants/api';
 import placeholder from '@app/assets/images/placeholder_s.png';
+import { Link } from 'react-router-dom';
 
 type SecondarySliderProps = {
   heading: string;
@@ -55,7 +56,9 @@ export const SecondarySlider: FC<SecondarySliderProps> = ({ items, heading, imag
             />
             <div className='absolute bottom-2 z-20 flex w-full justify-between px-2'>
               <PrimaryButton icon='add' />
-              <SecondaryButton>Watch</SecondaryButton>
+              <SecondaryButton>
+                <Link to={`/tv/${el.id}`}>Watch</Link>
+              </SecondaryButton>
             </div>
           </article>
         ))}

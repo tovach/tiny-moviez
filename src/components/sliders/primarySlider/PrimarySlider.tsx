@@ -1,9 +1,10 @@
 import React, { FC, SyntheticEvent, useState } from 'react';
+import { Link } from 'react-router-dom';
 
-import { PrimaryButton, SecondaryButton } from '@components/ui';
-import { Images, Movie } from '@types';
-import { IMAGE_SECURE_BASE_URL } from '@constants/api';
 import placeholder from '@app/assets/images/placeholder_l.png';
+import { PrimaryButton, SecondaryButton } from '@components/ui';
+import { IMAGE_SECURE_BASE_URL } from '@constants/api';
+import { Images, Movie } from '@types';
 
 type SliderProps = {
   items: Movie[];
@@ -44,7 +45,9 @@ export const PrimarySlider: FC<SliderProps> = ({ items, imageSize }) => {
               <PrimaryButton className='pointer-events-auto' icon='add'>
                 Watch List
               </PrimaryButton>
-              <SecondaryButton className='pointer-events-auto'>Watch Now</SecondaryButton>
+              <SecondaryButton className='pointer-events-auto'>
+                <Link to={`/movie/${el.id}`}>Watch Now</Link>
+              </SecondaryButton>
             </div>
           </div>
         ))}

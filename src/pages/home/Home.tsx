@@ -1,9 +1,10 @@
 import { FC, useEffect } from 'react';
+
 import { MovieCard, MovieList } from '@components/movies';
+import { Skeleton } from '@components/preloaders';
+import { PrimarySlider } from '@components/sliders';
 import { useAppSelector, useThunkActions } from '@hooks/redux';
 import { Movie } from '@types';
-import { PrimarySlider } from '@components/sliders';
-import { Skeleton } from '@components/preloaders';
 
 type HomeProps = {};
 
@@ -21,14 +22,14 @@ export const Home: FC<HomeProps> = () => {
   const { getMovies } = useThunkActions();
   const renderMovieItem = (item: Movie) => <MovieCard item={item} imageSize='w300' />;
   const listSkeleton = () => (
-      <div className='flex flex-wrap justify-between gap-10'>
-        {Array(3)
-          .fill(1)
-          .map((el, i) => (
-            <Skeleton key={i} height={375} width={250} variant='primary' />
-          ))}
-      </div>
-    );
+    <div className='flex flex-wrap justify-between gap-10'>
+      {Array(3)
+        .fill(1)
+        .map((el, i) => (
+          <Skeleton key={i} height={375} width={250} variant='primary' />
+        ))}
+    </div>
+  );
 
   useEffect(() => {
     getMovies('popularFilm');
