@@ -43,7 +43,7 @@ export const SecondarySlider: FC<SecondarySliderProps> = ({ items, heading, imag
             key={el.id}
             className='relative h-[130px] min-w-[210px] cursor-pointer rounded-xl'
           >
-            <h3 className='absolute left-2 top-2 z-20 font-extrabold'>
+            <h3 className='absolute  left-2 top-2 z-20 font-extrabold'>
               {el.title ? el.title : el.name}
             </h3>
             <img

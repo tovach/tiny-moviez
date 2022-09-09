@@ -35,6 +35,7 @@
 .fade-anim {
     animation: fadeAnim 0.5s ease-out;
 }
+
 @keyframes fadeAnim {
     from {
         opacity: 0;
@@ -43,4 +44,3 @@
         opacity: 1;
     }
 }
-
