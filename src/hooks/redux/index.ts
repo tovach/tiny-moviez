@@ -1,9 +1,9 @@
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 import { AppDispatch, AppRootState } from '@store';
-import { getMovies } from '@store/movieSlice/movieSlice';
-import { bindActionCreators } from 'redux';
 import { getMovieById } from '@store/movieItemSlice/movieItemSlice';
+import { getMovies } from '@store/movieSlice/movieSlice';
 
 const thunkActions = {
   getMovies,

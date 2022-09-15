@@ -1,7 +1,8 @@
 import { FC, SyntheticEvent } from 'react';
-import { Movie } from '@types';
-import { IMAGE_SECURE_BASE_URL } from '@constants/api';
+
 import placeholder from '@app/assets/images/placeholder_l.png';
+import { IMAGE_SECURE_BASE_URL } from '@constants/api';
+import { Movie } from '@types';
 
 type MovieItemProps = {
   item: Movie;

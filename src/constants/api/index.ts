@@ -9,5 +9,5 @@ export const ENDPOINTS = {
   upcomingFilm: `${BASE_URL}movie/upcoming?api_key=${APIKEY}&language=en-US`,
   nowPlayingFilm: `${BASE_URL}movie/now_playing?api_key=${APIKEY}&language=en-US`,
   popularTv: `${BASE_URL}tv/popular?api_key=${APIKEY}&language=en-US`,
-  topRatedTv: `${BASE_URL}tv/top_rated?api_key=${APIKEY}&language=en-US`,
+  topRatedTv: `${BASE_URL}tv/top_rated?api_key=${APIKEY}&language=en-US`
 } as const;

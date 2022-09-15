@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import placeholder from '@app/assets/images/placeholder_m.png';
 import { PrimaryButton, SecondaryButton } from '@components/ui';
 import { IMAGE_SECURE_BASE_URL } from '@constants/api';
-import { Images,Movie } from '@types';
+import { Images, Movie } from '@types';
 
 type MovieCardProps = {
   item: Movie;

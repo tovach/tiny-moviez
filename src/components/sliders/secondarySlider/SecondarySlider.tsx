@@ -1,10 +1,10 @@
 import React, { FC, SyntheticEvent, useRef } from 'react';
-
-import { IconButton, PrimaryButton, SecondaryButton } from '@components/ui';
-import { Images, Movie } from '@types';
-import { IMAGE_SECURE_BASE_URL } from '@constants/api';
-import placeholder from '@app/assets/images/placeholder_s.png';
 import { Link } from 'react-router-dom';
+
+import placeholder from '@app/assets/images/placeholder_s.png';
+import { IconButton, PrimaryButton, SecondaryButton } from '@components/ui';
+import { IMAGE_SECURE_BASE_URL } from '@constants/api';
+import { Images, Movie } from '@types';
 
 type SecondarySliderProps = {
   heading: string;

@@ -1,9 +1,9 @@
 import { FC, useEffect, useMemo } from 'react';
 
+import { Skeleton } from '@components/preloaders';
 import { SecondarySlider } from '@components/sliders';
 import { UserBar } from '@components/user';
 import { useAppSelector, useThunkActions } from '@hooks/redux';
-import { Skeleton } from '@components/preloaders';
 
 type RightProps = {};
 

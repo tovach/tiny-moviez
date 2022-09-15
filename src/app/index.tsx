@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import {Home, Movie, TvSeries} from '@pages';
+import { Home, Movie, TvSeries } from '@pages';
 
 import { Layout } from './layout';
 
